@@ -1,9 +1,17 @@
-import './App.css'
+import "./App.css";
+import LikeDislike from "./MachineCoding/LikeDislike";
+import OTP from "./MachineCoding/OTP";
+import ProgressBar from "./MachineCoding/ProgressBar";
 
 export default function App() {
   return (
     <main>
-      React ⚛️ + Vite ⚡ + Replit
+      {/* <TodoList /> */}
+      {/* <CounterTimer /> */}
+      {/* <ClockCounter /> */}
+      {/* <LikeDislike /> */}
+      {/* <ProgressBar /> */}
+      <OTP />
     </main>
-  )
+  );
 }

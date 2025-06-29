@@ -1,0 +1,29 @@
+.progress-container{
+  height:20px;
+  background:#C2C8CC;
+  width:100%;
+  border-radius:10px;
+  margin-top:50px;
+  overflow: hidden;
+
+}
+
+.progress-bar{
+  height:100%;
+  width:100%;
+  background:green;
+  border-radius:10px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+
+ 
+ 
+}
+.percentage-value{
+  align-content:center;
+  padding: 0 5px;
+
+
+}
