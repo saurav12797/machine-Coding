@@ -1,0 +1,32 @@
+.tab-container {
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.tab-component {
+  margin: 1rem;
+
+  
+}
+
+.tab-btn {
+  border:none;
+  background: white;
+  cursor: pointer;
+  transition:background 0.3s;
+  padding:.5rem;
+  border-radius:5px;
+ 
+}
+.active{
+  border-bottom: 1px solid black;
+  background:#f7f7f7;
+   transition:background 0.3s;
+}
+
+.tab-content{
+  margin-top:2rem;
+  display:flex;
+  justify-content:center
+}
