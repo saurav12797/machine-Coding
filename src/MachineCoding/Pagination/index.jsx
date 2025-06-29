@@ -1,8 +1,10 @@
+import React, { useEffect } from "react";
 import "./style.css";
 import { PaginationService } from "./pagination.service";
 
 export const Pagination = () => {
   const { getProductDetails } = PaginationService();
+  
   useEffect(() => {
     getProductDetails();
   }, []);
@@ -13,7 +15,7 @@ export const Pagination = () => {
       <div className="pagination-wrapper">
         <div className="page">
           <button>1</button>
-          <button>1</button>
+          <button>2</button>
         </div>
       </div>
     </div>
