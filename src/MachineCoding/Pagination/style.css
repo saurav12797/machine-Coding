@@ -1,5 +1,28 @@
-.page{
-  button {
-    margin-right:.3rem;
-  }
+.product-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-container {
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 1rem;
+
+}
+
+.product-container img {
+  height: 250px;
+}
+
+.arrow {
+  cursor: pointer;
+}
+
+.active {
+  background-color: blue !important;
+
 }

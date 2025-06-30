@@ -1,56 +1,62 @@
-import React, { useEffect, useState } from "react";
-import "./style.css";
-import { getProductDetails } from "./pagination.service";
+import { useEffect, useState } from "react";
+import { getProducts } from "./pagination.service";
+import ProductCard from "./productCard";
 
-export const Pagination = () => {
-  const [products, setProducts] = useState([{}]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [displayProducts, setDisplayProducts] = useState([{}]);
-  const [totalBtn, setTotalBtn] = useState([]);
-  const MAX_PAGE_SIZE = 10;
-
-  const startIndex = (currentPage - 1) * MAX_PAGE_SIZE;
-  const endIndex = currentPage * MAX_PAGE_SIZE;
-
-  const updateTotalBtn = () => {
-    const total = Math.ceil((products.length - 1) / MAX_PAGE_SIZE);
-
-    setTotalBtn(Array(total).fill(""));
-  };
+const Pagination = () => {
+  const [productData, setProductData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1); // Start from page 1
 
   useEffect(() => {
-    getProductDetails({ limit: 200 }).then((data) => {
-      setProducts(data);
-      handleCurrentDisplayProduct();
-      updateTotalBtn();
-    });
+    fetchProducts();
   }, []);
 
-  const handleCurrentDisplayProduct = () => {
-    if (!products.length) return;
-
-    const newProducts = products.slice(startIndex, endIndex).map((item) => {
-      return item;
-    });
-    setDisplayProducts(newProducts);
+  const fetchProducts = async () => {
+    const data = await getProducts({ limit: 200 });
+    setProductData(data.products || []);
   };
-  console.log(displayProducts);
+
+  const PAGE_SIZE = 10;
+  const totalPages = Math.ceil(productData.length / PAGE_SIZE);
+  const start = (currentPage - 1) * PAGE_SIZE;
+  const end = start + PAGE_SIZE;
 
   const handlePageChange = (index) => setCurrentPage(index + 1);
+  const handleNextPage = () => {
+    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
+  };
+  const handlePrevPage = () => {
+    if (currentPage > 1) setCurrentPage((prev) => prev - 1);
+  };
 
   return (
     <div>
       <h1>Pagination</h1>
-      <div className="pagination-wrapper">
-        {displayProducts?.map((item) => {
-          return <div>{item.title}</div>;
-        })}
-        {totalBtn?.map((_, index) => {
-          return (
-            <button onClick={() => handlePageChange(index)}>{index + 1}</button>
-          );
-        })}
-      </div>
+
+      <span className="arrow" onClick={handlePrevPage}>
+        ◀
+      </span>
+
+      {Array.from({ length: totalPages }).map((_, index) => (
+        <button
+          key={index}
+          className={index + 1 === currentPage ? "active" : ""}
+          onClick={() => handlePageChange(index)}
+        >
+          {index + 1}
+        </button>
+      ))}
+
+      <span className="arrow" onClick={handleNextPage}>
+        ►
+      </span>
+
+      {productData.length > 0 ? (
+        <ProductCard productData={productData.slice(start, end)} />
+      ) : (
+        "No Products Found"
+      )}
     </div>
   );
 };
+
+export default Pagination;
