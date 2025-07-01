@@ -1,4 +1,5 @@
 import "./App.css";
+import ChipInput from "./MachineCoding/ChipInput";
 import FileStructure from "./MachineCoding/FileStructure";
 import LikeDislike from "./MachineCoding/LikeDislike";
 import NestedCheckbox from "./MachineCoding/NestedCheckbox";
@@ -21,7 +22,8 @@ export default function App() {
       {/* <Pagination /> */}
       {/* <SearchAutoComplete /> */}
       {/* <FileStructure /> */}
-      <NestedCheckbox />
+      {/* <NestedCheckbox /> */}
+      <ChipInput />
     </main>
   );
 }

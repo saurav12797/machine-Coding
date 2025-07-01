@@ -1,0 +1,30 @@
+.chip-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.chip-input input {
+  min-width: 250px;
+  height: 40px;
+  padding: 5px;
+
+}
+
+.chip-item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chip-item p {
+  margin-left: 10px;
+  background-color: #D3D3D3;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.remove-item {
+  cursor: pointer;
+  margin-left: 10px;
+}
