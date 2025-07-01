@@ -1,4 +1,5 @@
 import "./App.css";
+import FileStructure from "./MachineCoding/FileStructure";
 import LikeDislike from "./MachineCoding/LikeDislike";
 import OTP from "./MachineCoding/OTP";
 import Pagination from "./MachineCoding/Pagination";
@@ -17,7 +18,8 @@ export default function App() {
       {/* <OTP /> */}
       {/* <TabComponent /> */}
       {/* <Pagination /> */}
-      <SearchAutoComplete />
+      {/* <SearchAutoComplete /> */}
+      <FileStructure />
     </main>
   );
 }
