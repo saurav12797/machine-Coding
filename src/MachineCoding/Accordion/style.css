@@ -1,0 +1,26 @@
+.accordion-heading {
+  height: 50px;
+  width: 350px;
+  word-wrap: wrap;
+  background: #C9C9C9;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  justify-content: space-between;
+  margin-bottom: .3rem;
+
+}
+
+.accordion-list {
+  height: auto;
+  scroll: auto;
+}
+
+.accordion-content {
+  height: 50px;
+  width: 350px;
+  word-wrap: wrap;
+
+}

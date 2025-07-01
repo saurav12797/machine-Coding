@@ -1,4 +1,5 @@
 import "./App.css";
+import Accordion from "./MachineCoding/Accordion";
 import ChipInput from "./MachineCoding/ChipInput";
 import FileStructure from "./MachineCoding/FileStructure";
 import LikeDislike from "./MachineCoding/LikeDislike";
@@ -23,7 +24,8 @@ export default function App() {
       {/* <SearchAutoComplete /> */}
       {/* <FileStructure /> */}
       {/* <NestedCheckbox /> */}
-      <ChipInput />
+      {/* <ChipInput /> */}
+      <Accordion />
     </main>
   );
 }
