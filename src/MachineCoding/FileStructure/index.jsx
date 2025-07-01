@@ -1,10 +1,15 @@
 import "./style.css";
 import { data } from "./json";
 import { useState } from "react";
+
 const FileStructure = () => {
+  // State to store the file structure data
   const [itemData, setItemData] = useState(data);
+
+  // State to track which folders are expanded
   const [isExpanded, setIsExpanded] = useState({});
 
+  // Toggle expand/collapse for folders
   const handleExpandCollapse = (node) => {
     setIsExpanded((prev) => ({
       ...prev,
@@ -12,12 +17,14 @@ const FileStructure = () => {
     }));
   };
 
+  // Recursive component to render folders and files
   const ListContent = ({ data, addNodeToList, deleteNodeFromList }) => {
     return (
       <div className="list-content">
         {data?.map((node) => (
           <div className="list-container" key={node.id}>
             <div className="list-heading">
+              {/* Show expand/collapse button for folders */}
               {node.isFolder && (
                 <span
                   className="expand-collapse"
@@ -26,7 +33,11 @@ const FileStructure = () => {
                   {isExpanded[node.name] ? "-" : "+"}
                 </span>
               )}
+
+              {/* Node name */}
               {node.name}
+
+              {/* Add button for folders */}
               {node.isFolder && (
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/1091/1091916.png"
@@ -35,6 +46,8 @@ const FileStructure = () => {
                   onClick={() => addNodeToList(node.id)}
                 />
               )}
+
+              {/* Delete button for all nodes */}
               <img
                 src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"
                 width={23}
@@ -42,6 +55,8 @@ const FileStructure = () => {
                 onClick={() => deleteNodeFromList(node.id)}
               />
             </div>
+
+            {/* Render children if expanded */}
             {node.children && isExpanded[node.name] && (
               <ListContent
                 data={node.children}
@@ -55,8 +70,11 @@ const FileStructure = () => {
     );
   };
 
+  // Function to add a new node to a folder
   const addNodeToList = (nodeId) => {
     const name = prompt("Enter folder name");
+
+    // Recursively update the structure
     const updateNode = (list) => {
       return list?.map((node) => {
         if (node.id == nodeId) {
@@ -68,7 +86,8 @@ const FileStructure = () => {
             ],
           };
         }
-        // if it has more children
+
+        // Recurse if there are children
         return {
           ...node,
           children: updateNode(node.children),
@@ -76,19 +95,22 @@ const FileStructure = () => {
       });
     };
 
+    // Update the state with the new structure
     setItemData((prev) => updateNode(prev));
   };
 
+  // Function to delete a node by ID
   const deleteNodeFromList = (nodeId) => {
     const deleteNode = (list) => {
       return list
-        ?.filter((node) => node.id !== nodeId) // Remove the matching node
+        ?.filter((node) => node.id !== nodeId) // Remove target node
         .map((node) => ({
           ...node,
           children: deleteNode(node.children), // Recurse into children
         }));
     };
 
+    // Update state after deletion
     setItemData((prev) => deleteNode(prev));
   };
 
