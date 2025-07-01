@@ -1,6 +1,7 @@
 import "./App.css";
 import FileStructure from "./MachineCoding/FileStructure";
 import LikeDislike from "./MachineCoding/LikeDislike";
+import NestedCheckbox from "./MachineCoding/NestedCheckbox";
 import OTP from "./MachineCoding/OTP";
 import Pagination from "./MachineCoding/Pagination";
 import ProgressBar from "./MachineCoding/ProgressBar";
@@ -19,7 +20,8 @@ export default function App() {
       {/* <TabComponent /> */}
       {/* <Pagination /> */}
       {/* <SearchAutoComplete /> */}
-      <FileStructure />
+      {/* <FileStructure /> */}
+      <NestedCheckbox />
     </main>
   );
 }
