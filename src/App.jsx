@@ -3,6 +3,7 @@ import LikeDislike from "./MachineCoding/LikeDislike";
 import OTP from "./MachineCoding/OTP";
 import Pagination from "./MachineCoding/Pagination";
 import ProgressBar from "./MachineCoding/ProgressBar";
+import SearchAutoComplete from "./MachineCoding/SearchAutoComplete";
 import TabComponent from "./MachineCoding/TabComponent";
 
 export default function App() {
@@ -15,7 +16,8 @@ export default function App() {
       {/* <ProgressBar /> */}
       {/* <OTP /> */}
       {/* <TabComponent /> */}
-      <Pagination />
+      {/* <Pagination /> */}
+      <SearchAutoComplete />
     </main>
   );
 }

@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchbar {
+  width: 300px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.search-suggestion {
+  width: 300px;
+  max-height: 200px;
+  border: 1px solid black;
+  background: #C2C8CC;
+  overflow-y: scroll;
+  padding: 1rem;
+
+
+
+}
