@@ -1,0 +1,19 @@
+.star {
+  padding: 5px;
+  height: 20px;
+  font-size: 3rem;
+  color: #747474;
+  cursor: pointer;
+
+}
+
+.star-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ;
+}
+
+.active-star {
+  color: #ffe211;
+}

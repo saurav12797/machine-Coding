@@ -8,6 +8,7 @@ import OTP from "./MachineCoding/OTP";
 import Pagination from "./MachineCoding/Pagination";
 import ProgressBar from "./MachineCoding/ProgressBar";
 import SearchAutoComplete from "./MachineCoding/SearchAutoComplete";
+import StarRating from "./MachineCoding/StarRating";
 import TabComponent from "./MachineCoding/TabComponent";
 
 export default function App() {
@@ -25,7 +26,8 @@ export default function App() {
       {/* <FileStructure /> */}
       {/* <NestedCheckbox /> */}
       {/* <ChipInput /> */}
-      <Accordion />
+      {/* <Accordion /> */}
+      <StarRating />
     </main>
   );
 }
