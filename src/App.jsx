@@ -2,6 +2,7 @@ import "./App.css";
 import Accordion from "./MachineCoding/Accordion";
 import ChipInput from "./MachineCoding/ChipInput";
 import FileStructure from "./MachineCoding/FileStructure";
+import InfiniteScrolling from "./MachineCoding/InfiniteScrolling";
 import LikeDislike from "./MachineCoding/LikeDislike";
 import NestedCheckbox from "./MachineCoding/NestedCheckbox";
 import OTP from "./MachineCoding/OTP";
@@ -27,7 +28,8 @@ export default function App() {
       {/* <NestedCheckbox /> */}
       {/* <ChipInput /> */}
       {/* <Accordion /> */}
-      <StarRating />
+      {/* <StarRating /> */}
+      <InfiniteScrolling />
     </main>
   );
 }

@@ -1,0 +1,16 @@
+.scroll-container {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.scrolling-wrapper {
+  height: 100px;
+  max-width: 500px;
+  background: #90be9f;
+  text-align: center;
+  margin: 10px auto;
+}
+
+body {
+  overflow-y: hidden;
+}
