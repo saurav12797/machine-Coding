@@ -8,7 +8,9 @@
   /* top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); */
+
 }
+
 .modal-header {
   font-size: 30px;
   font-weight: 600;
@@ -23,6 +25,7 @@
   top: 50%;
   left: 50%;
 }
+
 .modal {
   display: flex;
   flex-direction: column;
@@ -41,7 +44,6 @@
   overflow: auto;
 }
 
-.modal-component {
-  height: 200vh;
-  scroll: auto;
+.modal-component.no-scroll {
+  overflow: hidden;
 }
