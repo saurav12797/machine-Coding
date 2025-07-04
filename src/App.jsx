@@ -1,11 +1,14 @@
 import "./App.css";
 import Accordion from "./MachineCoding/Accordion";
 import ChipInput from "./MachineCoding/ChipInput";
+import ConfigDrivenForm from "./MachineCoding/ConfigDrivenForm";
+import FormProvider from "./MachineCoding/ConfigDrivenForm/formProvider";
 import FileStructure from "./MachineCoding/FileStructure";
 import InfiniteScrollingWithAPI from "./MachineCoding/InfiniteScrollWithAPI";
 import InfiniteScrolling from "./MachineCoding/InfiniteScrolling";
 import LikeDislike from "./MachineCoding/LikeDislike";
 import NestedCheckbox from "./MachineCoding/NestedCheckbox";
+import SimpleForm from "./MachineCoding/NormalForm";
 import OTP from "./MachineCoding/OTP";
 import Pagination from "./MachineCoding/Pagination";
 import ProgressBar from "./MachineCoding/ProgressBar";
@@ -33,7 +36,9 @@ export default function App() {
       {/* <StarRating /> */}
       {/* <InfiniteScrolling /> */}
       {/* <InfiniteScrollingWithAPI /> */}
-      <Modal />
+      {/* <Modal /> */}
+      {/* <ConfigDrivenForm /> */}
+      <SimpleForm />
     </main>
   );
 }
