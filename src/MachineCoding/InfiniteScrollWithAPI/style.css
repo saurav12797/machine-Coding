@@ -1,0 +1,13 @@
+.list-container {
+  margin-left: 1.2rem;
+}
+
+.list-heading {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.list-heading img {
+  margin-left: 10px;
+}
