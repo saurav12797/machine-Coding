@@ -4,6 +4,7 @@ import ChipInput from "./MachineCoding/ChipInput";
 import ConfigDrivenForm from "./MachineCoding/ConfigDrivenForm";
 import FormProvider from "./MachineCoding/ConfigDrivenForm/formProvider";
 import FileStructure from "./MachineCoding/FileStructure";
+import HolyGrail from "./MachineCoding/HolyGrid";
 import InfiniteScrollingWithAPI from "./MachineCoding/InfiniteScrollWithAPI";
 import InfiniteScrolling from "./MachineCoding/InfiniteScrolling";
 import LikeDislike from "./MachineCoding/LikeDislike";
@@ -38,7 +39,8 @@ export default function App() {
       {/* <InfiniteScrollingWithAPI /> */}
       {/* <Modal /> */}
       {/* <ConfigDrivenForm /> */}
-      <SimpleForm />
+      {/* <SimpleForm /> */}
+      <HolyGrail />
     </main>
   );
 }
