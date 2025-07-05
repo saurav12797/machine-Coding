@@ -1,0 +1,35 @@
+.cart {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.cart-item {
+  height: 150px;
+  width: 200px;
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+
+
+}
+
+body {
+  overflow: auto;
+}
+
+.cart-item button {
+  margin-top: auto;
+
+}
+
+.quantity {
+  display: flex;
+
+}
+
+.quantity span {
+  padding: 5px;
+  cursor: pointer;
+}

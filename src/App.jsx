@@ -17,6 +17,8 @@ import SearchAutoComplete from "./MachineCoding/SearchAutoComplete";
 import StarRating from "./MachineCoding/StarRating";
 import TabComponent from "./MachineCoding/TabComponent";
 import Modal from "./Modal";
+import Ecommerce from "./MachineCoding/Ecomerce";
+import Ecom from "./MachineCoding/Ecom";
 
 export default function App() {
   return (
@@ -40,7 +42,9 @@ export default function App() {
       {/* <Modal /> */}
       {/* <ConfigDrivenForm /> */}
       {/* <SimpleForm /> */}
-      <HolyGrail />
+      {/* <HolyGrail /> */}
+      {/* <Ecommerce /> */}
+      <Ecom />
     </main>
   );
 }
