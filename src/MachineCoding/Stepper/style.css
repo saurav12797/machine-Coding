@@ -1,0 +1,13 @@
+.line {
+  width: 2px;
+  height: 1.5rem;
+  color: black;
+  background-color: black;
+}
+
+.stepper-steps {
+  display: flex;
+}
+.steps {
+  flex: 0 0 30%;
+}

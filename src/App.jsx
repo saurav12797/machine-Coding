@@ -19,6 +19,8 @@ import TabComponent from "./MachineCoding/TabComponent";
 import Modal from "./Modal";
 import Ecommerce from "./MachineCoding/Ecomerce";
 import Ecom from "./MachineCoding/Ecom";
+import Notification from "./MachineCoding/Notification";
+import Stepper from "./MachineCoding/Stepper";
 
 export default function App() {
   return (
@@ -44,7 +46,9 @@ export default function App() {
       {/* <SimpleForm /> */}
       {/* <HolyGrail /> */}
       {/* <Ecommerce /> */}
-      <Ecom />
+      {/* <Ecom /> */}
+      {/* <Notification /> */}
+      <Stepper />
     </main>
   );
 }
