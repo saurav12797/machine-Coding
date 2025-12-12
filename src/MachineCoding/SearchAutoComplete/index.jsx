@@ -1,66 +1,57 @@
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./style.css";
 
-const SearchAutoComplete = () => {
-  const [products, setProducts] = useState([{}]);
-  const [input, setInput] = useState("");
-  const [cache, setCache] = useState({});
-  const [showSearch, setShowSearch] = useState(false);
+const AutoComplete = () => {
+  const [searchText, setSearchText] = useState("");
+  const [data, setData] = useState([]);
+  const cache = useRef({});
+  const controller = useRef(null);
+
+  const handleOnChange = (e) => {
+    setSearchText(e?.target?.value);
+  };
+
+  const handleSearchData = async () => {
+    if (cache.current?.[searchText]) {
+      setData(cache.current[searchText]);
+      return;
+    }
+
+    controller.current?.abort();
+    controller.current = new AbortController();
+
+    try {
+      const response = await fetch(
+        `https://dummyjson.com/products/search?q=${searchText}`,
+        { signal: controller.current.signal }
+      );
+
+      const data = await response.json();
+      setData(data?.products);
+      cache.current[searchText] = data?.products;
+    } catch (e) {}
+  };
 
   useEffect(() => {
-    const timer = setTimeout(handleFetchData, 400);
-    return () => clearTimeout(timer);
-  }, [input]);
+    if (!searchText) return;
 
-  const handleFetchData = async () => {
-    if (cache[input]) {
-      setProducts(cache[input]);
-      return;
-    }
-    console.log("new API call");
-    const response = await fetch(
-      `https://dummyjson.com/products/search?q=${input}`,
-    );
-    const data = await response.json();
-    setProducts(data.products || []);
+    const timer = setTimeout(handleSearchData, 1000);
 
-    setCache((prev) => ({ ...prev, [input]: data.products }));
-  };
-  const handleSearch = async (e) => {
-    const value = e.target.value;
-    setInput(value);
-    if (value) {
-      setShowSearch(true);
-      return;
-    }
-    setShowSearch(false);
-  };
+    return () => {
+      clearTimeout(timer);
+      controller.current?.abort();
+    };
+  }, [searchText]);
 
   return (
     <div>
-      <h1>Search Autocomplete</h1>
       <div className="search-wrapper">
-        <input
-          className="searchbar"
-          value={input}
-          onChange={handleSearch}
-          type="text"
-          onBlur={() => setShowSearch(false)}
-          onFocus={() => setShowSearch(true)}
-        />
-        {products.length > 1 && showSearch && (
-          <div className="search-suggestion">
-            {products?.map((item) => {
-              return (
-                <p
-                  className="search-items"
-                  onClick={() => handleCurrentItem(item)}
-                  key={item.id}
-                >
-                  {item?.title}
-                </p>
-              );
-            })}
+        <input type="text" value={searchText} onChange={handleOnChange} />
+        {data?.length > 0 && searchText && (
+          <div className="suggestion-box">
+            {data?.map((item) => (
+              <p key={item?.id}>{item?.title}</p>
+            ))}
           </div>
         )}
       </div>
@@ -68,4 +59,4 @@ const SearchAutoComplete = () => {
   );
 };
 
-export default SearchAutoComplete;
+export default AutoComplete;

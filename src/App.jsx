@@ -33,7 +33,7 @@ export default function App() {
       {/* <OTP /> */}
       {/* <TabComponent /> */}
       {/* <Pagination /> */}
-      {/* <SearchAutoComplete /> */}
+      <SearchAutoComplete />
       {/* <FileStructure /> */}
       {/* <NestedCheckbox /> */}
       {/* <ChipInput /> */}
@@ -48,7 +48,7 @@ export default function App() {
       {/* <Ecommerce /> */}
       {/* <Ecom /> */}
       {/* <Notification /> */}
-      <Stepper />
+      {/* <Stepper /> */}
     </main>
   );
 }
